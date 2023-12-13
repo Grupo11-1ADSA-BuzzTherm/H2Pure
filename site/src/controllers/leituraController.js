@@ -2,13 +2,11 @@ var leituraModel = require("../models/leituraModel");
 
 function buscarUltimasLeituras(req, res) {
 
-    const limite_linhas = 7;
-
     var id = req.params.id;
 
-    console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
+    console.log(`Recuperando as ultimas leituras`);
 
-    leituraModel.buscarUltimasLeituras(id, limite_linhas).then(function (resultado) {
+    leituraModel.buscarUltimasLeituras(id).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

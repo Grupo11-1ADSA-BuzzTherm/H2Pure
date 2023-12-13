@@ -111,7 +111,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #053147;
 }
 
 .dash {
@@ -119,7 +119,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #e5e5e5;
   height: 100vh;
   overflow: auto;
 }
@@ -178,7 +178,7 @@ body {
   text-align: center;
   height: 180px;
   justify-content: right;
-  background-color: #212124;
+  background-color: #053147;
   font-size: 20px;
 }
 
@@ -187,6 +187,7 @@ body {
   font-size: 25px;
   font-weight: lighter;
   text-align: left;
+  color: #a2ddfa;
 }
 
 .cards h1 {
@@ -228,7 +229,7 @@ body {
 }
 
 .tituloGraficos {
-  color: rgb(216, 216, 216);
+  color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
 }
@@ -246,13 +247,13 @@ body {
 }
 
 .btn-pink {
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #ffffff;
 }
 
 .btn-white {
-  color: #e6005a;
-  background-color: white;
+  color: white;
+  background-color: #053147;
 
 }
 

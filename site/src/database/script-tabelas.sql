@@ -149,7 +149,6 @@ select * from usuario;
 select * from esteira;
 select * from leitura;
 
-
 -- Empresa 1:
 select 
 date(dataHora) dia,
@@ -188,3 +187,21 @@ on es.id = l.fkEsteira
 where apta = 1
 and e.id =3
 group by dia;
+
+-- Esteira 1
+select 
+e.id,
+count(apta) prod
+from  esteira e
+join leitura l 
+on e.id = l.fkEsteira 
+where apta = 1 and e.id = 1
+group by e.id
+union
+select 
+e.id,
+count(apta) prod
+from  esteira e
+join leitura l 
+on e.id = l.fkEsteira 
+where apta = 0 and e.id = 1;
