@@ -123,6 +123,27 @@ INSERT INTO leitura (fkEsteira, apta) VALUES
 (10, 1) -- Leitura válida na Esteira 10
 ;
 
+insert into leitura (fkEsteira, apta, dataHora)
+values
+(10, 0, default),
+(1, 1, default),
+(4, 1, default),
+(1, 1, default),
+(4, 0, default),
+(1, 0, default),
+(1, 0, default),
+(4, 1, default),
+(1, 0, default),
+(5, 0, default),
+(5, 1, default),
+(5, 1, default),
+(9, 1, default),
+(9, 0, default),
+(1, 1, default),
+(10, 0, default),
+(9, 1, default),
+(10, 1, default);
+
 select * from empresa;
 select * from usuario;
 select * from esteira;
