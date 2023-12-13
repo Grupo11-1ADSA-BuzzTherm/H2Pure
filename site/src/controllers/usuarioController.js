@@ -18,8 +18,22 @@ function autenticar(req, res) {
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
                     if (resultadoAutenticar.length == 1) {
-                        s
                         console.log(resultadoAutenticar);
+
+                        esteiraModel.buscarEsteirasPorEmpresa(resultadoAutenticar[0].empresaId)
+                            .then((resultadoEsteiras) => {
+                                if (resultadoEsteiras.length > 0) {
+                                    res.json({
+                                        id: resultadoAutenticar[0].id,
+                                        email: resultadoAutenticar[0].email,
+                                        nome: resultadoAutenticar[0].nome,
+                                        senha: resultadoAutenticar[0].senha,
+                                        esteiras: resultadoEsteiras
+                                    });
+                                } else {
+                                    res.status(204).json({ esteiras: [] });
+                                }
+                            })
 
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");

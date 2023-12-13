@@ -1,7 +1,7 @@
 var alertas = [];
 
 function obterdados(idEsteira) {
-    fetch(`/medidas/tempo-real/${idEsteira}`)
+    fetch(`/leituras/tempo-real/${idEsteira}`)
         .then(resposta => {
             if (resposta.status == 200) {
                 resposta.json().then(resposta => {
