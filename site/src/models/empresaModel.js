@@ -19,7 +19,7 @@ function buscarPorCnpj(cnpj) {
 }
 
 function cadastrar(razaoSocial, cnpj) {
-  var query = `insert into empresa (razao_social, cnpj) values ('${razaoSocial}', '${cnpj}')`;
+  var query = `insert into empresa (razaoSocial, cnpj) values ('${razaoSocial}', '${cnpj}')`;
 
   return database.executar(query);
 }
