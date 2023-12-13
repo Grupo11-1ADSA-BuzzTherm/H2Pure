@@ -27,7 +27,7 @@ CREATE TABLE usuario (
 
 
 create table esteira (
-/* em nossa regra de negócio, um esteira tem apenas um sensor */
+/* em nossa regra de negócio, um aquario tem apenas um sensor */
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	setor VARCHAR(45),
 	fkEmpresa INT,
@@ -128,3 +128,59 @@ select * from usuario;
 select * from esteira;
 select * from leitura;
 
+-- Empresa 1:
+select 
+date(dataHora) dia,
+count(apta) prod
+from  empresa e 
+join esteira es 
+on es.fkEmpresa = e.id
+join leitura l 
+on es.id = l.fkEsteira 
+where apta = 1
+and e.id =1
+group by dia;
+
+-- Empresa 2:
+select 
+date(dataHora) dia,
+count(apta) prod
+from  empresa e 
+join esteira es 
+on es.fkEmpresa = e.id
+join leitura l 
+on es.id = l.fkEsteira 
+where apta = 1
+and e.id =2
+group by dia;
+
+-- Empresa 3
+select 
+date(dataHora) dia,
+count(apta) prod
+from  empresa e 
+join esteira es 
+on es.fkEmpresa = e.id
+join leitura l 
+on es.id = l.fkEsteira 
+where apta = 1
+and e.id =3
+group by dia;
+
+-- Esteira 1
+select 
+e.id,
+count(apta) prod
+from  esteira e
+join leitura l 
+on e.id = l.fkEsteira 
+where apta = 1 and e.id = 1
+group by e.id
+union
+select 
+e.id,
+count(apta) prod
+from  esteira e
+join leitura l 
+on e.id = l.fkEsteira 
+where apta = 0 and e.id = 1;
