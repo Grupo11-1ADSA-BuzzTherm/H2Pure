@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idEsteira, limite_linhas) {
+function buscarUltimasLeituras(idEsteira, limite_linhas) {
 
     instrucaoSql = ''
 
@@ -9,7 +9,7 @@ function buscarUltimasMedidas(idEsteira, limite_linhas) {
                         apta 
                         ,
                         FORMAT(momento, 'HH:mm:ss') as momento_grafico
-                    from medida
+                    from leitura
                     where fk_esteira = ${idEsteira}
                     order by id desc`;
     } else {
@@ -21,7 +21,7 @@ function buscarUltimasMedidas(idEsteira, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idEsteira) {
+function buscarLeiturasEmTempoReal(idEsteira) {
 
     instrucaoSql = ''
 
@@ -31,7 +31,7 @@ function buscarMedidasEmTempoReal(idEsteira) {
         dht11_umidade as umidade,  
                         CONVERT(varchar, momento, 108) as momento_grafico, 
                         fk_esteira 
-                        from medida where fk_esteira = ${idEsteira} 
+                        from leitura where fk_esteira = ${idEsteira} 
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
@@ -40,7 +40,7 @@ function buscarMedidasEmTempoReal(idEsteira) {
         dht11_umidade as umidade,
                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
                         fk_esteira 
-                        from medida where fk_esteira = ${idEsteira} 
+                        from leitura where fk_esteira = ${idEsteira} 
                     order by id desc limit 1`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -53,6 +53,6 @@ function buscarMedidasEmTempoReal(idEsteira) {
 
 
 module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarUltimasLeituras,
+    buscarLeiturasEmTempoReal
 }

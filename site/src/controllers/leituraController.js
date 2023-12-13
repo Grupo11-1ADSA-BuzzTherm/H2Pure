@@ -1,14 +1,14 @@
-var medidaModel = require("../models/medidaModel");
+var leituraModel = require("../models/leituraModel");
 
-function buscarUltimasMedidas(req, res) {
+function buscarUltimasLeituras(req, res) {
 
     const limite_linhas = 7;
 
     var id = req.params.id;
 
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+    console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 
-    medidaModel.buscarUltimasMedidas(id, limite_linhas).then(function (resultado) {
+    leituraModel.buscarUltimasLeituras(id, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -16,19 +16,19 @@ function buscarUltimasMedidas(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        console.log("Houve um erro ao buscar as ultimas leituras.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
 
 
-function buscarMedidasEmTempoReal(req, res) {
+function buscarLeiturasEmTempoReal(req, res) {
 
     var id = req.params.id;
 
-    console.log(`Recuperando medidas em tempo real`);
+    console.log(`Recuperando leituras em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal(id).then(function (resultado) {
+    leituraModel.buscarLeiturasEmTempoReal(id).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -36,13 +36,13 @@ function buscarMedidasEmTempoReal(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        console.log("Houve um erro ao buscar as ultimas leituras.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
 
 module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarUltimasLeituras,
+    buscarLeiturasEmTempoReal
 
 }
