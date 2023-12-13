@@ -63,6 +63,8 @@
                 <!-- O gráfico é chamado de acordo com o id (fk_esteira) do banco  -->
             </div>
             <div id="graficos">
+
+
             </div>
         </div>
     </div>
@@ -111,7 +113,7 @@
     function alterarTitulo(idEsteira) {
         var tituloEsteira = document.getElementById(`tituloEsteira${idEsteira}`)
         var descricao = JSON.parse(sessionStorage.ESTEIRAS).find(item => item.id == idEsteira).setor;
-        tituloEsteira.innerHTML = "Últimas leituras de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
+        tituloEsteira.innerHTML = "Últimas leituras de Temperatura e Umidade do <span style='color: #32b9cd'>" + descricao + "</span>"
     }
 
     function exibirEsteira(idEsteira) {
