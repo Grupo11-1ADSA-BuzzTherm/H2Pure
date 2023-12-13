@@ -1,17 +1,11 @@
 var database = require("../database/config");
 
-function buscarUltimasLeituras(idEsteira, limite_linhas) {
+function buscarUltimasLeituras(idEsteira) {
 
     instrucaoSql = ''
 
-    if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top ${limite_linhas}
-                        apta 
-                        ,
-                        FORMAT(momento, 'HH:mm:ss') as momento_grafico
-                    from leitura
-                    where fk_esteira = ${idEsteira}
-                    order by id desc`;
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select e.id, count(apta) prod from  esteira e join leitura l  on e.id = l.fkEsteira  where apta = 1 and e.id = ${idEsteira} group by e.id union select  e.id, count(apta) prod from  esteira e join leitura l  on e.id = l.fkEsteira  where apta = 0 and e.id = ${idEsteira};`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
