@@ -2,12 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: #e5e5e5;
+  opacity: 1.0;
 }
 
 :root {
   --tamanho-header: 80px;
-  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-banner: calc(110vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
@@ -21,7 +22,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  
 }
 
 .header .container {
@@ -32,7 +33,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #2d9bd1;
 }
 
 .agora {
@@ -40,18 +41,20 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: 380px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #000000;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #2d9bd1;
   width: fit-content;
   font-weight: 500;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .header h1 {
@@ -60,9 +63,10 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url(https://cdn.pixabay.com/photo/2020/02/06/18/43/water-background-4825172_1280.jpg);
   background-size: cover;
 }
+
 
 .banner .container {
   justify-content: center;
@@ -72,7 +76,7 @@ body {
 
 .banner .container p {
   font-size: 36px;
-  color: white;
+  color:black;
   width: 280px;
 }
 

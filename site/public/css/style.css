@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .container {
@@ -23,7 +23,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #0e0d0d;
 }
 
 .agora {
@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #000000;
 }
 
 
