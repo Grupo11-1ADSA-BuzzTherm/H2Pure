@@ -27,7 +27,7 @@ CREATE TABLE usuario (
 
 
 create table esteira (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
+/* em nossa regra de negócio, um esteira tem apenas um sensor */
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	setor VARCHAR(45),
 	fkEmpresa INT,
