@@ -125,24 +125,24 @@ INSERT INTO leitura (fkEsteira, apta) VALUES
 
 insert into leitura (fkEsteira, apta, dataHora)
 values
-(10, 0, default),
-(1, 1, default),
-(4, 1, default),
-(1, 1, default),
-(4, 0, default),
 (1, 0, default),
-(1, 0, default),
-(4, 1, default),
-(1, 0, default),
-(5, 0, default),
-(5, 1, default),
-(5, 1, default),
-(9, 1, default),
-(9, 0, default),
+(2, 1, default),
 (1, 1, default),
-(10, 0, default),
-(9, 1, default),
-(10, 1, default);
+(3, 1, default),
+(3, 1, default),
+(3, 0, default),
+(1, 1, default),
+(1, 1, default),
+(2, 0, default),
+(2, 0, default),
+(1, 1, default),
+(2, 1, default),
+(1, 1, default),
+(1, 0, default),
+(1, 1, default),
+(1, 0, default),
+(1, 1, default),
+(1, 1, default);
 
 select * from empresa;
 select * from usuario;
